@@ -1,4 +1,5 @@
 # Synchronization Map
+**Última actualización:** 09 Sep 2026 · ATLAS-TECH
 
 ## Current synchronized lane
 
@@ -13,21 +14,24 @@ DIRECTOR / CCAMEL 360
         │
    ┌────┴──────────────┐
    ↓                   ↓
-ATLAS SALES      HERMES COMMERCIAL
+ATLAS SALES      HERMES COMMERCIAL (:8645 Gateway LIVE)
    │                   │
    └─────── SYNC ──────┘
            │
-           ↓
-      SALES MCP
-           │
-           ↓
-      NEXT RESULT
+   ┌───────┴───────────────┐
+   ↓                       ↓
+WF-CHATWOOT-HERMES-v1   SALES MCP
+(n8n Inbound LIVE)         │
+   │                       ↓
+   └─────────────────→ NEXT RESULT (COMPROMISO / BOOKING)
 ```
 
-## Sync invariant
+## Componentes Activos Sincronizados
 
-Los componentes no tienen que compartir implementación. Deben poder recibir y producir el contexto requerido por el siguiente punto del loop.
+1. **Hermes Commercial Gateway HTTP:** `https://hermes.srv1587803.hstgr.cloud/chat` (FastAPI en puerto 8645).
+2. **Chatwoot / WhatsApp Dispatcher:** `WF-CHATWOOT-HERMES-v1` (`Z6wqgUmmtvupZ5dV`).
+3. **CRM Ingestion & Memory:** Supabase RPC `canal_recibir_mensaje` y `logs_operativos`.
 
-## Evidence rule
-
-Cada relación del mapa será marcada según evidencia real: VERIFIED, PARTIAL, UNKNOWN o NOT FOUND en el alcance investigado.
+## Evidence references
+- `EVIDENCE/EVIDENCE-CONVERSION-001-HERMES-GATEWAY-N8N.md`
+- `CHECKPOINTS/CHECKPOINT-CONVERSION-DOMAIN-003.md`
