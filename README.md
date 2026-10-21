@@ -1,3 +1,5 @@
+> **Repositorio de trabajo — no canónico.** Este repositorio no es fuente de autoridad y no define el estatus de ningún dominio del COS. La fuente canónica es `atlas-cos-v1` (`constitution/LEYES-DEL-COS-v1.md` y `cos-map/MAPA-DOMINIOS-INTEGRAL.md`). Cualquier auto-declaración de «dominio canónico» en este repositorio carece de efecto.
+
 # ATLAS COS — Conversion Domain
 
 ## Estado
